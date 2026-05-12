@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="1100.0" styleClass="root-pane" stylesheets="@sheet.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" styleClass="section-title" stylesheets="@sheet.css" text="Initiative Managment" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <TableView fixedCellSize="0.0" layoutX="49.0" layoutY="50.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="318.0" prefWidth="537.0" styleClass="modern-table" stylesheets="@sheet.css" AnchorPane.bottomAnchor="72.39999999999998" AnchorPane.leftAnchor="49.0" AnchorPane.rightAnchor="54.200000000000045" AnchorPane.topAnchor="50.0">
+        <columns>
+          <TableColumn prefWidth="57.59998035430908" text="ID" />
+          <TableColumn prefWidth="88.79998779296875" text="Sector ID" />
+            <TableColumn prefWidth="108.00001525878906" text="Target Funds" />
+            <TableColumn prefWidth="138.39996337890625" text="Start Date" />
+            <TableColumn prefWidth="140.0" text="End Date" />
+            <TableColumn prefWidth="256.800048828125" text="Primary Object" />
+            <TableColumn prefWidth="67.199951171875" text="Action" />
+            <TableColumn prefWidth="66.39996337890625" text="Edit" />
+        </columns>
+      </TableView>
+      <HBox alignment="CENTER" layoutX="14.0" layoutY="480.0" prefHeight="90.0" prefWidth="1034.0" scaleShape="false" spacing="15.0" AnchorPane.bottomAnchor="-20.399999999999977" AnchorPane.leftAnchor="14.0">
+         <children>
+            <TextField prefHeight="40.0" prefWidth="180.0" promptText="ID" styleClass="modern-field" stylesheets="@sheet.css" />
+            <TextField prefHeight="41.0" prefWidth="180.0" promptText="Sector ID" styleClass="modern-field" stylesheets="@sheet.css" />
+            <TextField promptText="Primary Object" styleClass="modern-field" stylesheets="@sheet.css" />
+            <DatePicker prefHeight="30.0" promptText="Start Date" styleClass="modern-field" stylesheets="@sheet.css" />
+            <DatePicker layoutX="440.0" layoutY="44.0" promptText="End Date" styleClass="modern-field" stylesheets="@sheet.css" />
+            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="178.0" styleClass="primary-button" stylesheets="@sheet.css" text="Add Initiative" />
+         </children>
+      </HBox>
+      <Button layoutX="944.0" layoutY="15.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="112.0" style="-fx-background-color: red;" styleClass="primary-button" stylesheets="@sheet.css" text="Back" />
+   </children>
+</AnchorPane>

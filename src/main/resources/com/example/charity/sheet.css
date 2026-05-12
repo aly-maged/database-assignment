@@ -1,0 +1,128 @@
+
+.root-pane {
+    -fx-background-color: linear-gradient(to bottom right, #eef2ff, #dbeafe);
+    -fx-padding: 20;
+    -fx-font-family: "Segoe UI";
+}
+
+
+.section-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e293b;
+}
+
+
+.modern-table {
+    -fx-background-color: white;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-padding: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 15, 0, 0, 4);
+    
+    -fx-table-cell-border-color: transparent;
+}
+
+
+.modern-table .column-header-background {
+    -fx-background-color: linear-gradient(to right, #38bdf8, #6366f1);
+    -fx-background-radius: 20 20 0 0;
+    -fx-padding: 5;
+}
+
+.modern-table .column-header {
+    -fx-background-color: transparent;
+    -fx-size: 45px;
+    -fx-border-color: transparent;
+}
+
+.modern-table .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+
+.modern-table .table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: transparent transparent #e2e8f0 transparent;
+    -fx-padding: 5;
+    -fx-cell-size: 45px;
+}
+
+.modern-table .table-row-cell:hover {
+    -fx-background-color: #eff6ff;
+}
+
+.modern-table .table-row-cell:selected {
+    -fx-background-color: #dbeafe;
+}
+
+
+.modern-table .table-cell {
+    -fx-text-fill: #334155;
+    -fx-font-size: 13px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-border-color: transparent;
+}
+
+
+.modern-table .scroll-bar:vertical {
+    -fx-background-color: transparent;
+}
+
+.modern-table .scroll-bar:vertical .thumb {
+    -fx-background-color: #6366f1;
+    -fx-background-radius: 10;
+}
+
+
+.modern-field {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: #cbd5e1;
+    -fx-padding: 10;
+    -fx-font-size: 14px;
+}
+
+.modern-field:focused {
+    -fx-border-color: #6366f1;
+    -fx-effect: dropshadow(gaussian, rgba(99,102,241,0.3), 10, 0, 0, 0);
+}
+
+
+.primary-button {
+    -fx-background-color: linear-gradient(to right, #38bdf8, #6366f1);
+    -fx-background-radius: 14;
+    
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    
+    -fx-padding: 10 20 10 20;
+    
+    -fx-cursor: hand;
+}
+
+.primary-button:hover {
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+    -fx-opacity: 0.95;
+}
+
+
+.delete-button {
+    -fx-background-color: #ef4444;
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+    -fx-font-weight: bold;
+}
+
+
+.edit-button {
+    -fx-background-color: #22c55e;
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+    -fx-font-weight: bold;
+}

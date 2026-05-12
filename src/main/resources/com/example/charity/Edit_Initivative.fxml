@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="root-pane" stylesheets="@sheet.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button layoutX="12.0" layoutY="13.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="94.0" style="-fx-background-color: red;" stylesheets="@stylet.css" text="Back" />
+      <VBox alignment="CENTER" layoutX="59.0" layoutY="61.0" prefHeight="317.0" prefWidth="482.0" styleClass="card" stylesheets="@stylet.css">
+         <children>
+            <TextField prefHeight="46.0" prefWidth="442.0" promptText="Target" styleClass="modern-field" stylesheets="@sheet.css" />
+            <VBox prefHeight="22.0" prefWidth="442.0" />
+            <TextField prefHeight="33.0" prefWidth="442.0" promptText="Primary Object" styleClass="modern-field" stylesheets="@sheet.css" />
+            <VBox prefHeight="22.0" prefWidth="442.0" />
+            <DatePicker prefHeight="54.0" prefWidth="486.0" promptText="Start Date" styleClass="modern-field" stylesheets="@sheet.css" />
+            <VBox prefHeight="18.0" prefWidth="442.0" />
+            <DatePicker prefHeight="39.0" prefWidth="442.0" promptText="End Date" />
+            <VBox prefHeight="17.0" prefWidth="442.0" />
+            <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="154.0" text="Edit" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
