@@ -1,5 +1,6 @@
 package com.example.charity;
 
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -16,21 +17,24 @@ import java.time.LocalDate;
 public class Main extends Application{
     public ObservableList<Supporter> supporterData = FXCollections.observableArrayList();
     public ObservableList<Initiative> initiativesData = FXCollections.observableArrayList();
+    public ObservableList<Contribution> contributionData = FXCollections.observableArrayList();
 
     public TableView<Supporter> supporterTableView = new TableView<>();
     public TableView<Initiative> initiativeTableView = new TableView<>();
+    public TableView<Contribution> contributionTableView = new TableView<>();
     public Controller controller=new Controller();
     public static void main(String[] args) {
         launch(args);
     }
     public Supporter selectedSupporter=new Supporter(0,"","");
     public Initiative selectedInitiative=new Initiative(0,0,0,"","","");
-
     @Override
     public void start(Stage primaryStage) {
         primaryStage.setTitle("Funding Management - Supporters");
         VBox editLayout = new VBox(10);
         VBox editInitiativeLayout = new VBox(10);
+        Scene ContributionScene;
+
 
         Scene Initiativescene ;
         Scene editInitiativescene =new  Scene(editInitiativeLayout,600,400);
@@ -112,9 +116,34 @@ public class Main extends Application{
         TableColumn<Initiative, Void> deleteInitiativeCol = new TableColumn<>("Action");
         TableColumn<Initiative, Void> editInitiativeCol = new TableColumn<>("Edit");
 
+
         initiativeTableView.getColumns().addAll(initiativeId,sectorIdcol,fundingTargetcol,startDatecol,endDatecol,primaryObjectivecol,deleteInitiativeCol,editInitiativeCol);
         initiativeTableView.setItems(initiativesData);
 
+
+        /// ////////////////////////Contribution\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+        TableColumn<Contribution, Number> idContributioncol = new TableColumn<>("ID");
+        idContributioncol.setCellValueFactory(cellData -> cellData.getValue().getId());
+
+        TableColumn<Contribution, String> nameContributioncol = new TableColumn<>("Full Name");
+        nameContributioncol.setCellValueFactory(cellData -> cellData.getValue().getFullName());
+        nameCol.setMinWidth(200);
+
+        TableColumn<Contribution, Number> amountGiftedcol = new TableColumn<>("amount Gifted");
+        amountGiftedcol.setCellValueFactory(cellData -> cellData.getValue().getAmountGifted());
+        amountGiftedcol.setMinWidth(200);
+
+        TableColumn<Contribution, String> Timecol = new TableColumn<>("amount Gifted");
+        Timecol.setCellValueFactory(cellData -> cellData.getValue().getTime());
+        Timecol.setMinWidth(200);
+
+        TableColumn<Contribution, String> PrimaryCol = new TableColumn<>("Objective");
+        PrimaryCol.setCellValueFactory(cellData -> cellData.getValue().getPrimaryObjective());
+        PrimaryCol.setMinWidth(200);
+
+        controller.loadContributions(contributionData);
+        contributionTableView.getColumns().addAll(idContributioncol,nameContributioncol,amountGiftedcol,Timecol,PrimaryCol);
+        contributionTableView.setItems(contributionData);
 
         supporterTableView.getColumns().addAll(idCol, nameCol, emailCol, deleteCol,editCol);
         supporterTableView.setItems(supporterData);
@@ -239,6 +268,13 @@ public class Main extends Application{
 
 
 
+
+
+        VBox vBox = new VBox(10);
+        vBox.setPadding(new Insets(10));
+        vBox.getChildren().addAll(new Label("Contribution Manageemnt"),contributionTableView);
+
+
         HBox formLayout = new HBox(10);
         formLayout.setPadding(new Insets(10, 0, 0, 0));
         formLayout.getChildren().addAll(nameInput, emailInput, addButton);
@@ -277,9 +313,12 @@ public class Main extends Application{
         initiativeTableView.setItems(initiativesData);
         Initiativescene = new Scene(InitiativeLayout);
 
+
+        ContributionScene=new Scene(vBox);
         Scene scene = new Scene(mainLayout, 600, 400);
-        primaryStage.setScene(Initiativescene);
+        primaryStage.setScene(ContributionScene);
         primaryStage.show();
+
         backbtn.setOnAction(e -> {
             primaryStage.setScene(scene);
         });

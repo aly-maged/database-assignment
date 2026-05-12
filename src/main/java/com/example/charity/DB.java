@@ -6,8 +6,7 @@ import java.time.LocalDate;
 import java.sql.*;
 
 public class DB {
-    // "jdbc:sqlserver://localhost:1433;databaseName=AssignDatabase;encrypt=true;trustServerCertificate=true;user=sharaf;password=12345;";
-    private static final String DB_URL = "";
+    private static final String DB_URL = "jdbc:sqlserver://localhost:1433;databaseName=AssignDatabase;encrypt=true;trustServerCertificate=true;user=sharaf;password=12345;";
 
     public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(DB_URL);
@@ -199,29 +198,28 @@ public class DB {
     }
 
 
-//    public ObservableList<Contribution>loadContributions(ObservableList<Contribution> contributionData) {
-//        String sql = "SELECT id, full_name, amount_gifted, timestamp , primary_objective FROM Initiative";
-//
-//        try (Connection conn = getConnection(); // Use your connection class
-//             Statement stmt = conn.createStatement();
-//             ResultSet rs = stmt.executeQuery(sql)) {
-//
-//            while (rs.next()) {
-//                int id = rs.getInt("id");
-//                String full_name = rs.getString("full_name");
-//                double amountGifted = rs.getDouble("amount_gifted");
-//                String objective = rs.getString("primary_objective");
-//
-//                java.sql.Time sqlStartDate = rs.getTime("start_date");
-//                String startStr = (sqlStartDate != null) ? sqlStartDate.toString() : "No Date";
-//                java.sql.Date sqlEndDate = rs.getDate("end_date");
-//                String endStr = (sqlEndDate != null) ? sqlEndDate.toString() : "No Date";
-//                contributionData.add(new Contribution(id, sectorId, target, startStr, endStr, objective));
-//            }
-//            System.out.println("Initiatives loaded successfully!");
-//        } catch (SQLException e) {
-//            System.out.println("Error loading Initiatives: " + e.getMessage());
-//        }
-//        return contributionData;
-//    }
+    public ObservableList<Contribution>loadContributions(ObservableList<Contribution> contributionData) {
+        String sql = "SELECT id, full_name, amount_gifted, timestamp , primary_objective FROM ContributionView";
+
+        try (Connection conn = getConnection(); // Use your connection class
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
+
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String full_name = rs.getString("full_name");
+                double amountGifted = rs.getDouble("amount_gifted");
+                String objective = rs.getString("primary_objective");
+
+                java.sql.Date sqlStartDate = rs.getDate("timestamp");
+                String timestr = (sqlStartDate != null) ? sqlStartDate.toString() : "No Date";
+
+                contributionData.add(new Contribution(id,full_name , timestr, amountGifted, objective));
+            }
+            System.out.println("Contributions loaded successfully!");
+        } catch (SQLException e) {
+            System.out.println("Error loading Contribution: " + e.getMessage());
+        }
+        return contributionData;
+    }
 }

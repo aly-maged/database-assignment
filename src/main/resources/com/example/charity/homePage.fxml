@@ -7,37 +7,41 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="650.0" style="-fx-background-color: linear-gradient(to bottom right, #eef6ff, #dbeafe);" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
-   <top>
-      <VBox alignment="CENTER" prefHeight="143.0" prefWidth="650.0" spacing="8.0" BorderPane.alignment="CENTER">
-         <padding>
-            <Insets top="20.0" />
-         </padding>
-         <children>
-            <Label style="-fx-font-size: 22px;" styleClass="title-label" stylesheets="@stylet.css" text="Community Funding Management System" />
-            <Label lineSpacing="0.5" style="-fx-text-fill: #64748b; -fx-font-size: 15px; -fx-font-weight: 500;" text="Manage initiatives, supporters and contributions" />
-         </children>
-      </VBox>
-   </top>
-   <center>
-      <VBox alignment="CENTER" prefHeight="249.0" prefWidth="546.0" spacing="30.0" stylesheets="@stylet.css" BorderPane.alignment="CENTER">
-         <children>
-            <AnchorPane prefHeight="230.0" prefWidth="547.0" styleClass="welcome-card" stylesheets="@stylet.css">
-               <children>
-                  <Label layoutX="118.0" layoutY="47.0" style="-fx-text-fill: white; -fx-font-size: 15px;" text="Track initiatives, contributions and supporter activity easily." />
-                  <Label alignment="CENTER" layoutX="170.0" styleClass="welcome-title" stylesheets="@stylet.css" text="Welcome Back 👋" />
-                  <HBox alignment="CENTER" layoutX="9.0" layoutY="92.0" prefHeight="98.0" prefWidth="582.0" spacing="30.0">
-                     <children>
-                        <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="135.0" text="Supporters" />
-                        <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="135.0" text="Initiative" />
-                        <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="135.0" text="Contributions" />
-                     </children>
-                  </HBox>
-               </children>
-            </AnchorPane>
-         </children>
-      </VBox>
-   </center>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="1200.0" style="-fx-background-color: linear-gradient(to bottom right, #eef6ff, #dbeafe);" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.charity.UIController">
+    <top>
+        <VBox alignment="CENTER" prefHeight="194.0" prefWidth="1200.0" spacing="8.0" BorderPane.alignment="CENTER">
+            <padding><Insets top="20.0" /></padding>
+            <children>
+                <Label alignment="CENTER" prefHeight="94.0" prefWidth="998.0" style="-fx-font-size: 35px;" styleClass="title-label" stylesheets="@stylet.css" text="Community Funding Management System">
+               <font>
+                  <Font size="11.0" />
+               </font></Label>
+                <Label lineSpacing="0.5" style="-fx-text-fill: #64748b; -fx-font-size: 20px; -fx-font-weight: 500;" text="Manage initiatives, supporters and contributions" />
+            </children>
+        </VBox>
+    </top>
+    <center>
+        <VBox alignment="CENTER" prefHeight="249.0" prefWidth="546.0" spacing="30.0" stylesheets="@stylet.css" BorderPane.alignment="CENTER">
+            <children>
+                <AnchorPane maxWidth="826.0" prefHeight="314.0" prefWidth="826.0" styleClass="welcome-card" stylesheets="@stylet.css">
+                    <children>
+                        <Label alignment="CENTER" layoutX="181.0" layoutY="110.0" style="-fx-text-fill: white; -fx-font-size: 20px;" text="Track initiatives, contributions and supporter activity easily." />
+                        <Label alignment="CENTER" layoutX="273.0" layoutY="14.0" prefHeight="77.0" prefWidth="334.0" style="-fx-font-size: 40px;" styleClass="welcome-title" stylesheets="@stylet.css" text="Welcome Back 👋" />
+                        <HBox alignment="CENTER" layoutX="-1.0" layoutY="157.0" prefHeight="98.0" prefWidth="882.0" spacing="30.0">
+                            <children>
+                                <Button fx:id="supportersBtn" mnemonicParsing="false" onAction="#handleSupporters" prefHeight="70.0" prefWidth="170.0" style="-fx-font-size: 20px;" text="Supporters" />
+                                <Button fx:id="initiativeBtn" alignment="CENTER" mnemonicParsing="false" onAction="#handleInitiative" prefHeight="70.0" prefWidth="167.0" style="-fx-font-size: 20px;" text="Initiative">
+                           <font>
+                              <Font size="25.0" />
+                           </font></Button>
+                                <Button fx:id="contributionsBtn" mnemonicParsing="false" onAction="#handleContributions" prefHeight="70.0" prefWidth="170.0" style="-fx-font-size: 20px;" text="Contributions" />
+                            </children>
+                        </HBox>
+                    </children>
+                </AnchorPane>
+            </children>
+        </VBox>
+    </center>
 </BorderPane>

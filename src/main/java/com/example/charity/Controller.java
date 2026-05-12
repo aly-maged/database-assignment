@@ -39,4 +39,9 @@ public class Controller {
     public void deleteInitiative(int id) {
         db.deleteInitiative(id);
     }
+    public void loadContributions(ObservableList<Contribution> contributionData)
+    {
+        contributionData.clear();
+        contributionData = db.loadContributions(contributionData);
+    }
 }

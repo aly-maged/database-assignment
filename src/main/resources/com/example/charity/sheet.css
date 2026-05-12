@@ -19,7 +19,7 @@
     -fx-border-radius: 20;
     -fx-padding: 10;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 15, 0, 0, 4);
-    
+
     -fx-table-cell-border-color: transparent;
 }
 
@@ -46,7 +46,7 @@
 .modern-table .table-row-cell {
     -fx-background-color: white;
     -fx-border-color: transparent transparent #e2e8f0 transparent;
-    -fx-padding: 5;
+    -fx-padding: -2;
     -fx-cell-size: 45px;
 }
 
@@ -62,7 +62,7 @@
 .modern-table .table-cell {
     -fx-text-fill: #334155;
     -fx-font-size: 13px;
-    -fx-alignment: CENTER_LEFT;
+    -fx-alignment: CENTER;
     -fx-border-color: transparent;
 }
 
@@ -95,13 +95,13 @@
 .primary-button {
     -fx-background-color: linear-gradient(to right, #38bdf8, #6366f1);
     -fx-background-radius: 14;
-    
+
     -fx-text-fill: white;
     -fx-font-size: 14px;
     -fx-font-weight: bold;
-    
+
     -fx-padding: 10 20 10 20;
-    
+
     -fx-cursor: hand;
 }
 

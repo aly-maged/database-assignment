@@ -6,21 +6,22 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="1200.0" styleClass="root-pane" stylesheets="@sheet.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.charity.UIController" >
+    <children>
+        <Label layoutX="14.0" layoutY="14.0" styleClass="section-title" stylesheets="@sheet.css" text="Contributions" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="900.0" styleClass="root-pane" stylesheets="@sheet.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <Label layoutX="14.0" layoutY="14.0" styleClass="section-title" stylesheets="@sheet.css" text="Contributions" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-      <TableView fixedCellSize="0.0" layoutX="51.2" layoutY="68.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="418.0" prefWidth="839.0" styleClass="modern-table" stylesheets="@sheet.css" AnchorPane.bottomAnchor="34.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="48.0">
-        <columns>
-          <TableColumn prefWidth="148.00001049041748" text="Full Name" />
-          <TableColumn prefWidth="131.99998474121094" text="Amount Gifted" />
-            <TableColumn prefWidth="108.00001525878906" text="Time Stamp" />
-            <TableColumn prefWidth="256.800048828125" text="Primary Object" />
-        </columns>
-         <columnResizePolicy>
-            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-         </columnResizePolicy>
-      </TableView>
-      <Button layoutX="770.0" layoutY="15.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="112.0" style="-fx-background-color: red;" styleClass="primary-button" stylesheets="@sheet.css" text="Back" />
-   </children>
+        <TableView fx:id="contributionsTableView" fixedCellSize="0.0" layoutX="51.2" layoutY="68.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="418.0" prefWidth="839.0" styleClass="modern-table" stylesheets="@sheet.css" AnchorPane.bottomAnchor="34.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="48.0">
+            <columns>
+                <TableColumn fx:id="fullNameCol" prefWidth="173.6000051498413" text="Full Name" />
+                <TableColumn fx:id="amountCol" prefWidth="151.1999969482422" text="Amount Gifted" />
+                <TableColumn fx:id="timeCol" prefWidth="168.79998779296875" text="Time Stamp" />
+                <TableColumn fx:id="primaryObjectContribCol" prefWidth="527.9999389648438" text="Primary Object" />
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+            </columnResizePolicy>
+        </TableView>
+
+        <Button layoutX="1064.0" layoutY="15.0" mnemonicParsing="false" onAction="#handleBackFromContributions" prefHeight="39.0" prefWidth="112.0" style="-fx-background-color: red;" styleClass="primary-button" stylesheets="@sheet.css" text="Back" />
+    </children>
 </AnchorPane>
